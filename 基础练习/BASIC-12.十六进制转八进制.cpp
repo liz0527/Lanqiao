@@ -25,6 +25,7 @@
 　　【提示】
 　　先将十六进制数转换成某进制数，再由某进制数转换成八进制。
 */
+/*by liuchuo*/
 #include <iostream>
 #include <map>
 using namespace std;
