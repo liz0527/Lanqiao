@@ -15,24 +15,28 @@
 150
 */
 #include <iostream>
-#include <map>
 using namespace std;
 int main(){
-	int n;
+	int n,count=1,max=1,maxnum;
 	cin >> n;
-	map<int,int> m;
-	int temp;
-	for(int i=0;i<n;i++){
-		cin >> temp;
-		m[temp]++;
-	}
-	int max=0,count;
-	for(auto it=m.begin();it!=m.end();it++){
-		if(it->second > max){
-			max = it->second;
-			count = it->first;
+	if(n>0){
+		int num[n];
+		cin >> num[0];
+		maxnum = num[0];
+		for(int i=1;i<n;i++){
+			cin >> num[i];
+			if(num[i]==num[i-1]){
+				count++;
+				if(count>max){
+					max = count;
+					maxnum = num[i];
+				}
+			}
+			else {
+				count=1;
+			}
 		}
+		cout << maxnum;	
 	}
-	cout << count;
 	return 0;
 }
